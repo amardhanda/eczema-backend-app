@@ -1,0 +1,11 @@
+create table doctorUID
+(
+    patient_ID SERIAL PRIMARY KEY,
+    patient_UID INT,
+    pat_first_name VARCHAR(50) NOT NULL,
+    patient_middle_name VARCHAR(100),
+    patient_surname VARCHAR(50) NOT NULL,
+    sex VARCHAR(1) NOT NULL CHECK (sex IN ('M', 'F' , 'O')) ,
+    ethnicity VARCHAR(5) NOT NULL CHECK (ethnicity IN ('white', 'mixed' , 'asian' , 'black' , 'other')),
+    dob TIMESTAMP NOT NULL
+);

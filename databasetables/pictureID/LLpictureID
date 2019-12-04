@@ -1,0 +1,5 @@
+create table ll_picture_ID
+(
+    ll_imageID SERIAL PRIMARY KEY,
+    ll_image VARBINARY(MAX)
+);

@@ -1,0 +1,14 @@
+create table ul_info
+(
+    ul_picture_ID SERIAL PRIMARY KEY,
+    ul_dateTaken TIMESTAMP NOT NULL,
+    ul_image_age INT,
+    ul_erythema_score INT,
+    ul_edema_score INT,
+    ul_excloration_score INT,
+    ul_lichenification_score INT,
+    ul_area_score INT,
+    ul_total_score INT,
+    ul_complete bit,
+    ul_comments VARCHAR(250)
+);

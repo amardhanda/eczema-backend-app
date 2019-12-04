@@ -1,0 +1,9 @@
+create table doctor
+(
+    doctor_ID SERIAL PRIMARY KEY,
+    doctor_UID INT NOT NULL,
+    doc_first_name VARCHAR(50) NOT NULL,
+    doc_middle_name VARCHAR(100),
+    doc_surname VARCHAR(50) NOT NULL,
+    doc_password VARCHAR(50) NOT NULL
+);

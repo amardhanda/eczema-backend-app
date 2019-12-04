@@ -1,0 +1,14 @@
+create table t_info
+(
+    t_picture_ID SERIAL PRIMARY KEY,
+    t_dateTaken TIMESTAMP NOT NULL,
+    t_image_age INT,
+    t_erythema_score INT,
+    t_edema_score INT,
+    t_excloration_score INT,
+    t_lichenification_score INT,
+    t_area_score INT,
+    t_total_score INT,
+    t_complete bit,
+    t_comments VARCHAR(250)
+);

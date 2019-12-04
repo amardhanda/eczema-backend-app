@@ -1,0 +1,14 @@
+create table hnn_info
+(
+    hnn_picture_ID SERIAL PRIMARY KEY,
+    hnn_dateTaken TIMESTAMP NOT NULL,
+    hnn_image_age INT,
+    hnn_erythema_score INT,
+    hnn_edema_score INT,
+    hnn_excloration_score INT,
+    hnn_lichenification_score INT,
+    hnn_area_score INT,
+    hnn_total_score INT,
+    hnn_complete bit,
+    hnn_comments VARCHAR(250)
+);
