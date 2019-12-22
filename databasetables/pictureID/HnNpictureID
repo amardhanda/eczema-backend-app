@@ -1,5 +1,0 @@
-create table hnn_picture_id
-(
-    hnn_imageID SERIAL PRIMARY KEY,
-    hnn_image VARBINARY(MAX)
-);

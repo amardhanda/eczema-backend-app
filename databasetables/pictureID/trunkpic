@@ -1,0 +1,5 @@
+create table trunkpic
+(
+   trunkid int,
+   image VARBINARY(MAX) NOT NULL
+);

@@ -1,0 +1,12 @@
+create table patientscores
+(
+    ID SERIAL PRIMARY KEY,
+    patientUID int,
+    headnneck int,
+    trunk int,
+    Upperlimb int,
+    lowerlimb int,
+    piccomplete bit,
+    totalscore int
+
+);

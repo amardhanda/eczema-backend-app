@@ -1,0 +1,14 @@
+create table upperlimb
+(
+    ID SERIAL PRIMARY KEY,
+    date TIMESTAMP NOT NULL,
+    imageage INT,
+    erythemascore INT,
+    edemascore INT,
+    exclorationscore INT,
+    lichenificationscore INT,
+    areascore INT,
+    totalscore INT,
+    complete bit,
+    comments VARCHAR(250)
+);

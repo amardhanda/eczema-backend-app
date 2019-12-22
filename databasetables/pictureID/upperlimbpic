@@ -1,0 +1,5 @@
+create table upperlimbpic
+(
+    lowerlimbid int,
+    image VARBINARY(MAX) NOT NULL
+);
