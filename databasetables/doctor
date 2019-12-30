@@ -1,11 +1,14 @@
 create table doctor
 (
-    
-    UID INT NOT NULL,
-    firstname VARCHAR(50) NOT NULL,
-    middlename VARCHAR(100),
-    surname VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL
+    doctor_id       serial      not null
+        constraint doctor_pkey
+            primary key,
+    doctor_uid      integer     not null,
+    doc_first_name  varchar(50) not null,
+    doc_middle_name varchar(100),
+    doc_surname     varchar(50) not null,
+    doc_password    varchar(50) not null
 );
+
 
 /* when inserting password use HASHBYTES to ensure encryption */
