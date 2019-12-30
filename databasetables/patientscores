@@ -1,0 +1,27 @@
+create table patientscores
+(
+    id          serial  not null,
+    patientuid  integer
+        constraint patientscores_patient_uid_fk
+            references patient (uid),
+    headnneck   integer not null,
+    trunk       integer not null,
+    upperlimb   integer not null,
+    lowerlimb   integer,
+    piccomplete bit,
+    totalscore  integer
+);
+
+create unique index patientscores_headnneck_uindex
+    on patientscores (headnneck);
+
+create unique index patientscores_lowerlimb_uindex
+    on patientscores (lowerlimb);
+
+create unique index patientscores_trunk_uindex
+    on patientscores (trunk);
+
+create unique index patientscores_upperlimb_uindex
+    on patientscores (upperlimb);
+
+

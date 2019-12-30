@@ -1,12 +1,27 @@
 create table patient
 (
-    ID SERIAL PRIMARY KEY,
-    UID INT,
-    firstname VARCHAR(50) NOT NULL,
-    middlename VARCHAR(100),
-    surname VARCHAR(50) NOT NULL,
-    sex VARCHAR(1) NOT NULL CHECK (sex IN ('M', 'F' , 'O')) ,
-    ethnicity VARCHAR(5) NOT NULL CHECK (ethnicity IN ('white', 'mixed' , 'asian' , 'black' , 'other')),
-    dob TIMESTAMP NOT NULL,
-    complete BIT
+    id         serial      not null
+        constraint patient_pkey
+            primary key,
+    uid        integer
+        constraint patient_patientdoctor_patientuid_fk
+            references patientdoctor (patientuid),
+    firstname  varchar(50) not null,
+    middlename varchar(100),
+    surname    varchar(50) not null,
+    sex        varchar(1)  not null
+        constraint patient_sex_check
+            check ((sex)::text = ANY
+                   ((ARRAY ['M'::character varying, 'F'::character varying, 'O'::character varying])::text[])),
+    ethnicity  varchar(5)  not null
+        constraint patient_ethnicity_check
+            check ((ethnicity)::text = ANY
+                   ((ARRAY ['white'::character varying, 'mixed'::character varying, 'asian'::character varying, 'black'::character varying, 'other'::character varying])::text[])),
+    dob        timestamp   not null,
+    complete   bit
 );
+
+create unique index patient_uid_uindex
+    on patient (uid);
+
+
