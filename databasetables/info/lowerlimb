@@ -1,14 +1,20 @@
 create table lowerlimb
 (
-    ID SERIAL PRIMARY KEY,
-    date TIMESTAMP NOT NULL,
-    imageage INT,
-    erythemascore INT,
-    edemascore INT,
-    exclorationscore INT,
-    lichenificationscore INT,
-    areascore INT,
-    totalscore INT,
-    complete bit,
-    comments VARCHAR(250)
+    id                   serial    not null
+        constraint lowerlimb_pkey
+            primary key
+        constraint lowerlimb_id_fkey
+            references patientscores (lowerlimb),
+    date                 timestamp not null,
+    imageage             integer,
+    erythemascore        integer,
+    edemascore           integer,
+    exclorationscore     integer,
+    lichenificationscore integer,
+    areascore            integer,
+    totalscore           integer,
+    complete             bit,
+    comments             varchar(250)
 );
+
+
